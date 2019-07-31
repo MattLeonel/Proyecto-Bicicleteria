@@ -34,7 +34,7 @@ public class Bicicleteria {
     
         for(int i = 0; i < bicicletas.size(); i++){
         
-            if(bicicletas.get(i).getNroDeSerie() == nroDeSerie){
+            if(bicicletas.get(i).getNroDeSerie().equals(nroDeSerie)){
             
                 return bicicletas.get(i);
             
@@ -43,5 +43,29 @@ public class Bicicleteria {
         }
         
         return null;
+    }
+    
+    public ArrayList<Bicicleta> buscarBicisPorPrecio(float precio){
+        ArrayList<Bicicleta> lista = new ArrayList<>();
+        for (int i=0;i<bicicletas.size();i++){
+            if(bicicletas.get(i).getPrecio() < precio){
+                lista.add(bicicletas.get(i));
+            }
+        }
+        return lista;
+    }
+    
+    public ArrayList<Bicicleta> bicisOrdenadas(){
+        Bicicleta aux;
+        for (int i=0; i<bicicletas.size()-1; i++){
+            for (int j=0; j<bicicletas.size()-1; j++){
+                if (bicicletas.get(i).getAño() >= bicicletas.get(i+1).getAño()){
+                aux=bicicletas.get(i+1);
+                bicicletas.set(i+1, bicicletas.get(i));
+                bicicletas.set(i, aux);
+                }
+            }
+        }
+        return bicicletas;
     }
 }

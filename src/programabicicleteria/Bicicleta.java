@@ -29,5 +29,7 @@ public class Bicicleta {
         return nroDeSerie;
     }
     
-    
+    public int getAño() {
+        return año;
+    }
 }
