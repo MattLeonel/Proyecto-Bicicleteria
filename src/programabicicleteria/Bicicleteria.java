@@ -59,10 +59,10 @@ public class Bicicleteria {
         Bicicleta aux;
         for (int i=0; i<bicicletas.size()-1; i++){
             for (int j=0; j<bicicletas.size()-1; j++){
-                if (bicicletas.get(i).getAño() >= bicicletas.get(i+1).getAño()){
-                aux=bicicletas.get(i+1);
-                bicicletas.set(i+1, bicicletas.get(i));
-                bicicletas.set(i, aux);
+                if (bicicletas.get(j).getAño() >= bicicletas.get(j+1).getAño()){
+                aux=bicicletas.get(j+1);
+                bicicletas.set(j+1, bicicletas.get(j));
+                bicicletas.set(j, aux);
                 }
             }
         }
